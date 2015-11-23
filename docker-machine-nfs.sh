@@ -199,7 +199,7 @@ configureBoot2Docker()
   local bootlocalsh='#!/bin/sh
   sudo umount /Users
   sudo /usr/local/etc/init.d/nfs-client start
-  sudo mount -t nfs -o noacl,async '$prop_nfshost_ip':/Users /Users'
+  sudo mount -t nfs -o noacl,async,actimeo=2 '$prop_nfshost_ip':/Users /Users'
 
   local file='/var/lib/boot2docker/bootlocal.sh'
 
